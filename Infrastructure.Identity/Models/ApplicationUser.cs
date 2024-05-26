@@ -8,11 +8,11 @@ namespace Infrastructure.Identity.Models;
 public class ApplicationUser : IdentityUser
 {
     public string Username { get; set; }
-    public List<RefreshTokenDto> RefreshTokens { get; set; }
+    public List<RefreshToken> RefreshTokens { get; set; }
 
     public ApplicationUser()
     {
-        RefreshTokens = new List<RefreshTokenDto>();
+        RefreshTokens = new List<RefreshToken>();
     }
 
     public bool OwnsToken(string token)
@@ -20,7 +20,7 @@ public class ApplicationUser : IdentityUser
         return RefreshTokens.Find(x => x.Token == token) != null;
     }
 
-    public void AddRefreshToken(RefreshTokenDto refreshToken)
+    public void AddRefreshToken(RefreshToken refreshToken)
     {
         RefreshTokens.Add(refreshToken);
     }

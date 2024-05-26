@@ -5,13 +5,13 @@ namespace Application.Dtos.Account;
 /// <summary>
 /// Data Transfer Object for handling refresh token operations
 /// </summary>
-public class RefreshTokenDto
+public class RefreshToken
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="RefreshTokenDto"/> class.
+    /// Initializes a new instance of the <see cref="RefreshToken"/> class.
     /// </summary>
     /// <param name="token">The token to be refreshed.</param>
-    public RefreshTokenDto(string token)
+    public RefreshToken(string token)
     {
         if (string.IsNullOrWhiteSpace(token))
             throw new ArgumentNullException(nameof(token));
